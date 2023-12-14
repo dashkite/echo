@@ -1,15 +1,15 @@
 {
-  "name": "@dashkite/echo",
+  "name": "@dashkite/sedna",
   "version": "0.0.0",
   "description": "Command-line JSON Streaming Processor",
   "keywords": [],
-  "homepage": "https://github.com/dashkite/echo#readme",
+  "homepage": "https://github.com/dashkite/sedna#readme",
   "bugs": {
-    "url": "https://github.com/dashkite/echo/issues"
+    "url": "https://github.com/dashkite/sedna/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dashkite/echo.git"
+    "url": "git+https://github.com/dashkite/sedna.git"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "authors": [
