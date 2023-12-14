@@ -1,0 +1,52 @@
+{
+  "name": "@dashkite/echo",
+  "version": "0.0.0",
+  "description": "Command-line JSON Streaming Processor",
+  "keywords": [],
+  "homepage": "https://github.com/dashkite/echo#readme",
+  "bugs": {
+    "url": "https://github.com/dashkite/echo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dashkite/echo.git"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "authors": [
+    "Dan Yoder",
+    "David Harper"
+  ],
+  "bin": {
+    "sedna": "bin/sedna"
+  },
+  "exports": {
+    ".": {
+      "node": "./build/node/src/index.js"
+    }
+  },
+  "main": "build/node/src/index.js",
+  "files": [
+    "build/node/src"
+  ],
+  "scripts": {
+    "test": "genie test",
+    "build": "genie build"
+  },
+  "devDependencies": {
+    "@dashkite/amen": "^0.2.0",
+    "@dashkite/amen-console": "^0.0.2",
+    "@dashkite/assert": "^0.1.4",
+    "@dashkite/genie": "link:../genie",
+    "@dashkite/genie-coffee": "link:../genie-coffee",
+    "execa": "5"
+  },
+  "dependencies": {
+    "@dashkite/joy": "^0.3.16",
+    "coffeescript": "^2.7.0",
+    "commander": "^11.1.0",
+    "js-yaml": "^4.1.0",
+    "jsome": "^2.5.0",
+    "jsonpath-plus": "^7.2.0",
+    "prettyoutput": "^1.2.0"
+  }
+}
