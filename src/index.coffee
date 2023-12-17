@@ -57,7 +57,7 @@ indent = ( text ) ->
 
 compile = ( code, path ) ->
   Coffee.compile """
-      ({ path }, _, $ ) -> 
+      ({ path, pathAll }, _, $ ) -> 
       #{ indent code }
     """,
     bare: true
@@ -80,7 +80,9 @@ Filter =
     Filter.make ( await FSP.readFile path, "utf8" ), "/#{ path }"
 
 Helpers = {
-  path: jsonpath
+  path: ( expression, context ) ->
+    ( jsonpath expression, context )[0]
+  pathAll: jsonpath
 }
 
 Format = {
@@ -102,9 +104,11 @@ Format = {
   yaml: YAML.dump
 }
 
+identity = Fn.curry ( _, __, x ) -> yield x
+
 run = ( filter, { files, pretty, yaml }) ->
 
-  filters = if filter? then [ Filter.make filter ] else []
+  filters = if filter? then [ Filter.make filter ] else [ identity ]
   
   if files?
     for path in files

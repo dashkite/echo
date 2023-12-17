@@ -22,6 +22,27 @@ Options:
   -h, --help                 display help for command
 ```
 
+## Example
+
+Extract the request property nested within JSON log entries.
+
+```
+tail logs.json | sedna 'yield ( path \"$.[*].request\", $)[0]'"
+```
+
+## Filters
+
+Filters are CoffeeScript that yields results based on an input object. Two variables are available:
+
+- `$`: the current object
+- `_`: a state variable that retains values between invocations
+
+## Built-In Functions
+
+In addition, helper functions are available to filters.
+
+- `path`: Apply a [JSON Path](https://jsonpath.com/) expression to a value
+
 ## About The Name
 
 Learn more about the [Goddess Sedna](https://www.wikiwand.com/en/Sedna_(mythology))!
